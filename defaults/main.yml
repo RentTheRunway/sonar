@@ -17,10 +17,13 @@ sonarrunner_zipfile: 'sonar-runner-dist-2.4.zip'
 sonarrunner_url: 'http://repo1.maven.org/maven2/org/codehaus/sonar/runner/sonar-runner-dist/2.4/sonar-runner-dist-2.4.zip'
 
 
-sonar_version: 6.2
-sonar_name: "sonarqube-enterprise-{{ sonar_version }}"
+sonar_version: 7.9.1
+# sonar_name: "sonarqube-enterprise-{{ sonar_version }}"
+sonar_name: "sonarqube-{{ sonar_version }}"
 sonar_file: "{{ sonar_name }}.zip"
-sonar_url: 'https://binaries.sonarsource.com/CommercialDistribution/sonarqube-enterprise/{{ sonar_file }}'
+# sonar_url: 'https://binaries.sonarsource.com/CommercialDistribution/sonarqube-enterprise/{{ sonar_file }}'
+sonar_url: 'https://binaries.sonarsource.com/Distribution/sonarqube/{{ sonar_file }}'
+
 sonar_home: /opt/sonar
 sonar_directory: "{{ sonar_home }}/sonarqube-{{ sonar_version }}"
 sonar_web_javaopts: "-Xmx1024m -Xms128m -XX:+HeapDumpOnOutOfMemoryError"
