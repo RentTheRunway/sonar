@@ -29,17 +29,16 @@ dd_jvm_opts: >
   -Ddd.trace.global.tags=env:management,application:{{ sonar_name }},service:{{ sonar_name }} -Ddd.http.client.tag.query-string=true
   -Ddd.http.server.tag.query-string=true
   -Ddd.logs.injection=true
-  -Ddd.service.name={{ sonar_name }}
   -Ddd.trace.analytics.enabled=true
 
 sonar_web_javaopts: "-javaagent:/etc/datadog-agent/dd-java-agent.jar -Xmx1024m -Xms128m -XX:+HeapDumpOnOutOfMemoryError"
-sonar_web_javaadditionalopts: "{{ dd_jvm_opts }}"
+sonar_web_javaadditionalopts: "-Ddd.service.name=web.{{ sonar_name }} {{ dd_jvm_opts }} -Dbootstrap.system_call_filter=false"
 
 sonar_search_javaopts: false
-sonar_search_javaadditionalopts: "-Dbootstrap.system_call_filter=false"
+sonar_search_javaadditionalopts: "-Ddd.service.name=es.{{ sonar_name }} -Dbootstrap.system_call_filter=false"
 
 sonar_ce_javaopts: false
-sonar_ce_javaadditionalopts: false
+sonar_ce_javaadditionalopts: "-Ddd.service.name=ce.{{ sonar_name }}"
 
 sonar_secret: ''
 sonar_log_rolling_policy: "time:yyyy-MM-dd"
@@ -48,6 +47,7 @@ sonar_log_names:
   - web
   - sonar
   - ce
+  - es
 
 sonar_plugins:
 # Integration
