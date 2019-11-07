@@ -21,7 +21,8 @@ defaults/main.yml and vars/main.yml contain variables. Please change the sonar_p
 Dependencies
 ------------
 
-You can run this role combined with the role pcextreme.mariadb. An implementation with Postgres is possible.
+- You can run this role combined with the role pcextreme.mariadb. An implementation with Postgres is possible.
+- This role assumes the vanilla datadog-agent was already configured, if it hasn't been please do not run the tasks tagged `datadog`.
 
 Example Usage
 ----------------
