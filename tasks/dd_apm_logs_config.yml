@@ -8,8 +8,6 @@
     group: dd-agent
   loop: "{{ sonar_log_names }}"
   tags:
-    - sonar
-    - sonarconfig
     - datadog
 
 - name: Create Datadog log config files.
@@ -22,8 +20,6 @@
   loop: "{{ sonar_log_names }}"
   notify: restart datadog-agent
   tags:
-    - sonar
-    - sonarconfig
     - datadog
 
 - name: Download Datadog APM agent
@@ -33,7 +29,5 @@
     validate_certs: no
   notify: restart sonar
   tags:
-    - sonar
-    - sonarconfig
     - datadog
 
