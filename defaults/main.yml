@@ -37,13 +37,13 @@ dd_jvm_opts: >
 
 
 sonar_web_javaopts: "-javaagent:/opt/datadog-agent/dd-java-agent.jar -Xmx1024m -Xms128m -XX:+HeapDumpOnOutOfMemoryError"
-sonar_web_javaadditionalopts: "-Ddd.service.name={{ dd_service_name }}:web {{ dd_jvm_opts }} -Dbootstrap.system_call_filter=false"
+sonar_web_javaadditionalopts: " {{ dd_jvm_opts }} -Dbootstrap.system_call_filter=false"
 
 sonar_search_javaopts: false
-sonar_search_javaadditionalopts: "-Ddd.service.name={{ dd_service_name }}:es -Dbootstrap.system_call_filter=false"
+sonar_search_javaadditionalopts: "-Dbootstrap.system_call_filter=false"
 
 sonar_ce_javaopts: false
-sonar_ce_javaadditionalopts: "-Ddd.service.name={{ dd_service_name }}:ce"
+sonar_ce_javaadditionalopts: false
 
 sonar_secret: ''
 sonar_log_rolling_policy: "time:yyyy-MM-dd"
