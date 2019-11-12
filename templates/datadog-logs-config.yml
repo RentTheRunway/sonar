@@ -2,5 +2,5 @@
 logs:
   - type: file
     path: "{{ sonar_directory }}/logs/{{ item }}.log"
-    service: "{{ sonar_name }}"
-    source: "{{ item }}.{{ sonar_name }}"
+    service: "{{ dd_service_name }}"
+    source: "{{ dd_service_name }}:{{ item }}"

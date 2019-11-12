@@ -22,10 +22,19 @@
   tags:
     - datadog
 
+- name: Create Datadog APM directory
+  file:
+    path: /opt/datadog-agent
+    state: directory
+    owner: dd-agent
+    group: dd-agent
+  tags:
+    - datadog
+
 - name: Download Datadog APM agent
   get_url:
     url: https://repo.dfw.rtrdc.net/rtr/global/dd-java-agent-0.33.0.jar
-    dest: /etc/datadog-agent/dd-java-agent.jar
+    dest: /opt/datadog-agent/dd-java-agent.jar
     validate_certs: no
   notify: restart sonar
   tags:
