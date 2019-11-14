@@ -1,5 +1,5 @@
 ---
-- include: dd_apm_logs_config.yml
+- include: datadog.yml
 - include: memory_config.yml
 - include: dependencies.yml
 - include: runner.yml
