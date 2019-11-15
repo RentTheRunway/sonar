@@ -1,5 +1,6 @@
 ---
 - include: datadog.yml
+  tags: datadog
 - include: memory_config.yml
 - include: dependencies.yml
 - include: runner.yml

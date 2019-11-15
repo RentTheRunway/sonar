@@ -7,8 +7,6 @@
     owner: dd-agent
     group: dd-agent
   loop: "{{ sonar_log_names }}"
-  tags:
-    - datadog
 
 - name: Create Datadog log config files.
   template:
@@ -19,8 +17,6 @@
     group: dd-agent
   loop: "{{ sonar_log_names }}"
   notify: restart datadog-agent
-  tags:
-    - datadog
 
 - name: Create Datadog APM directory
   file:
@@ -28,8 +24,6 @@
     state: directory
     owner: dd-agent
     group: dd-agent
-  tags:
-    - datadog
 
 - name: Download Datadog APM agent
   get_url:
@@ -37,6 +31,4 @@
     dest: /opt/datadog-java-agent/dd-java-agent.jar
     validate_certs: no
   notify: restart sonar
-  tags:
-    - datadog
 
