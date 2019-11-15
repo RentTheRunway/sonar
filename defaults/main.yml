@@ -36,7 +36,7 @@ dd_jvm_opts: >
   -Ddd.trace.analytics.enabled=true
 
 
-sonar_web_javaopts: "-javaagent:/opt/datadog-agent/dd-java-agent.jar -Xmx1024m -Xms128m -XX:+HeapDumpOnOutOfMemoryError"
+sonar_web_javaopts: "-javaagent:/opt/datadog-java-agent/dd-java-agent.jar -Xmx1024m -Xms128m -XX:+HeapDumpOnOutOfMemoryError"
 sonar_web_javaadditionalopts: "-Ddd.service.name={{ dd_service_name }} {{ dd_jvm_opts }} -Dbootstrap.system_call_filter=false"
 
 sonar_search_javaopts: false
