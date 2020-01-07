@@ -3,6 +3,9 @@ bbaassssiiee.sonar
 
 Sonar is a source-code quality tool.
 
+### Important!
+This role no longer has the postgres role (see meta/main.yml). You must provide your own for this role to work.
+
 Requirements
 ------------
 
