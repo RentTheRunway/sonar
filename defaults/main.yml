@@ -14,7 +14,7 @@ sonar_username: 'sonaruser'
 sonar_password: 'Terrible_Password_1234'
 
 sonarrunner_zipfile: 'sonar-runner-dist-2.4.zip'
-sonarrunner_url: 'http://repo1.maven.org/maven2/org/codehaus/sonar/runner/sonar-runner-dist/2.4/sonar-runner-dist-2.4.zip'
+sonarrunner_url: 'https://repo1.maven.org/maven2/org/codehaus/sonar/runner/sonar-runner-dist/2.4/sonar-runner-dist-2.4.zip'
 
 
 sonar_version: 6.2
