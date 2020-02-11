@@ -30,5 +30,5 @@
   wait_for_connection:
     connect_timeout: 20
     sleep: 5
-    delay: 5
+    delay: 120 # upping this to 2m, not sure why wait_for_connection passes when next task fails from UNREACHABLE host
     timeout: 300
