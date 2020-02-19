@@ -45,7 +45,7 @@
   template:
     src: ../templates/sonar-secret.txt
     dest: "{{ sonar_home }}/.sonar"
-    mode: 0644
+    mode: 0400
     owner: "{{ sonar_username }}"
     group: "{{ sonar_username }}"
 
