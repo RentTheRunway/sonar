@@ -36,7 +36,7 @@
 - name: 'add directory for sonar-secret file'
   file:
     dest: "{{ sonar_home }}/.sonar"
-    mode: 0644
+    mode: 0500
     state: directory
     owner: "{{ sonar_username }}"
     group: "{{ sonar_username }}"
